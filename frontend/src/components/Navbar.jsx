@@ -11,7 +11,10 @@ function Navbar() {
       <Link to="/" className="navbar-title">Where The Hell Is My Money</Link>
       <div className="navbar-buttons">
         {user ? (
-          <button onClick={logout} className="navbar-button">Logout</button>
+          <>
+            <Link to="/dashboard" className="navbar-button">Dashboard</Link>
+            <button onClick={logout} className="navbar-button">Logout</button>
+          </>
         ) : (
           <>
             <Link to="/login" className="navbar-button">Login</Link>

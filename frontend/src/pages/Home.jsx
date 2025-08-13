@@ -16,7 +16,7 @@ function Home() {
       <h1>Where The Hell Is My Money</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          Fidget No: {count}
         </button>
       </div>
     </>
