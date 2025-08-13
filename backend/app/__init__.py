@@ -1,5 +1,3 @@
-
-# app/__init__.py
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
@@ -12,4 +10,7 @@ def create_app():
     db.init_app(app)
     
     from app.models import user
+    from app.routes.auth import auth_bp
+    app.register_blueprint(auth_bp)
+    
     return app
