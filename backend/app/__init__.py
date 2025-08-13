@@ -24,6 +24,12 @@ def create_app():
     
     from app.models import user, account, transaction, budget
     from app.routes.auth import auth_bp
+    from app.routes.account import account_bp
+    from app.routes.transaction import transaction_bp
+    from app.routes.budget import budget_bp
     app.register_blueprint(auth_bp)
+    app.register_blueprint(account_bp)
+    app.register_blueprint(transaction_bp)
+    app.register_blueprint(budget_bp)
     
     return app
