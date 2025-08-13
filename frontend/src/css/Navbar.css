@@ -1,12 +1,13 @@
 .navbar {
   background-color: #252525;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .navbar-title {
@@ -14,15 +15,21 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+  margin-left: 1rem;
 }
 
 .navbar-title:hover {
   color: #51ff4b;
 }
 
+.navbar-title.active {
+  color: #3de03b;
+}
+
 .navbar-buttons {
   display: flex;
   gap: 1rem;
+  margin-right: 1rem;
 }
 
 .navbar-button {
@@ -31,10 +38,37 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  transition: background-color 200ms;
+  transition: background-color 200ms, color 200ms;
 }
 
 .navbar-button:hover {
   background-color: #51ff4b;
   color: #252525;
+}
+
+.navbar-button.active {
+  background-color: #3de03b;
+  color: #252525;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-title {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+  .navbar-buttons {
+    margin-right: 0;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .navbar-button {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import '../css/Navbar.css'
@@ -8,17 +8,17 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-title">Where The Hell Is My Money</Link>
+      <NavLink to="/" className="navbar-title">Where The Hell Is My Money</NavLink>
       <div className="navbar-buttons">
         {user ? (
           <>
-            <Link to="/dashboard" className="navbar-button">Dashboard</Link>
+            <NavLink to="/dashboard" className="navbar-button">Dashboard</NavLink>
             <button onClick={logout} className="navbar-button">Logout</button>
           </>
         ) : (
           <>
-            <Link to="/login" className="navbar-button">Login</Link>
-            <Link to="/register" className="navbar-button">Register</Link>
+            <NavLink to="/login" className="navbar-button">Login</NavLink>
+            <NavLink to="/register" className="navbar-button">Register</NavLink>
           </>
         )}
       </div>

@@ -6,3 +6,4 @@ gunicorn
 Flask-Migrate
 PyJWT
 Flask-CORS
+flask_jwt_extended

@@ -4,7 +4,12 @@
   text-align: center;
   color: #ffffff;
   font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
 }

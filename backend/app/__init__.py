@@ -13,17 +13,16 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     
-    # Sophisticated CORS setup
     CORS(app, resources={r"/*": {
         "origins": Config.ALLOWED_ORIGINS,
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"],
         "expose_headers": ["Content-Type", "X-CSRFToken"],
-        "supports_credentials": False,  # Set to True if using cookies/sessions
+        "supports_credentials": False,
         "max_age": 600
     }})
     
-    from app.models import user
+    from app.models import user, account, transaction, budget
     from app.routes.auth import auth_bp
     app.register_blueprint(auth_bp)
     
